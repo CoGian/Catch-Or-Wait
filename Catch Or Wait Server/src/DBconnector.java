@@ -109,6 +109,7 @@ public class DBconnector {
 				Order o = new Order(rs.getInt("id"), rs.getString("bus_id"), rs.getString("stop_id"), rs.getTime("time"), 
 										rs.getString("phone"));
 				System.out.println(o.getPhone());
+				o.delete();
 				OrderList.orders.add(o);
 
 			}
@@ -135,7 +136,7 @@ public class DBconnector {
 			 //create a statement
 			stmt = myConn.createStatement();
 			//execute sql update
-			int rs = stmt.executeUpdate("DELETE FROM orders WHERE id="+order.getId());
+			stmt.executeUpdate("DELETE FROM orders WHERE id="+order.getId());
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
