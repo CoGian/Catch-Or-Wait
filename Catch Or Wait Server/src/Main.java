@@ -7,7 +7,7 @@ public class Main {
 		
 		
 		Timer timer = new Timer();
-		timer.schedule(new OrderList(), 0, 30000);
+		timer.schedule(new OrderList(), 0, 60000);
         
 	}
 

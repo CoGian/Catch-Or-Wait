@@ -56,7 +56,7 @@ public class Order {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public void delete()
+	public void deleteFromDB()
 	{
 		DBconnector connector = new DBconnector() ; 
 		connector.deleteOrder(this);

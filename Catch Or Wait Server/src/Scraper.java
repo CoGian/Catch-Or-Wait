@@ -23,14 +23,12 @@ public class Scraper {
 		
 
 		Thread.sleep(4000);
-		// Scroll down by 4500 pixels so that whole page is visible and Selenium
-		// can capture all the arrival in the List
 		
 
 		// Capture all the arivals details
-		List<WebElement> arrivals = driver.findElements(By.xpath("//*[@id=\"contentsArea\"]/div[3]/div/div[2]/div[3]/ul"));
+		List<WebElement> arrivals = driver.findElements(By.xpath("//*[@id=\"contentsArea\"]/div[3]/div/div[2]/div[3]/ul/li"));
 
-		// Displays the number of flights captured inside the list
+		// Displays the number of arrivals captured inside the list
 		System.out.println("List size detected  " + arrivals.size() + "\n");
 
 		// Declares an iterator to fetch the Entries
@@ -39,11 +37,13 @@ public class Scraper {
 		//index number
 		int index = 1;
 
-		// Print the Flights on the console
+		// Print the arrivals on the console
 		while (it.hasNext()) {
 
-			String flightName = it.next().getText();
-			System.out.println("\n" + index + "\n" + flightName);
+			 String[] array1 = it.next().getText().split("\n");
+			 String busno = array1[0] ; 
+			 String arrival = array1[2] ; 
+			System.out.println(index +" "+ busno + " "+ arrival );
 			index++;
 
 		}

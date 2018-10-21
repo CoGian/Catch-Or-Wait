@@ -93,7 +93,7 @@ public class DBconnector {
 	
 	
 	
-	//checks for any order which must have time-10 <= local time 
+	//checks for any order which must have time-10 <= local time
 	public void getOrders() {
 		
 		
@@ -110,7 +110,8 @@ public class DBconnector {
 				Order o = new Order(rs.getInt("id"), rs.getString("bus_id"), rs.getString("stop_id"), rs.getTime("time"), 
 										rs.getString("phone"));
 				System.out.println(o.getPhone());
-				//o.delete();
+				// when an order moves from database to the program  it is deleted from database 
+				o.deleteFromDB();
 				OrderList.orders.add(o);
 
 			}
