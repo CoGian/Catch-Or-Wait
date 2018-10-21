@@ -34,6 +34,7 @@ public class DBconnector {
 		
 	}
 	
+	//closes a connection to the wampserver
 	private void closeConnection() {
 		try {
 			if (rs != null) {
@@ -109,7 +110,7 @@ public class DBconnector {
 				Order o = new Order(rs.getInt("id"), rs.getString("bus_id"), rs.getString("stop_id"), rs.getTime("time"), 
 										rs.getString("phone"));
 				System.out.println(o.getPhone());
-				o.delete();
+				//o.delete();
 				OrderList.orders.add(o);
 
 			}
@@ -128,7 +129,7 @@ public class DBconnector {
 	}
 
 
-
+	//deletes an order from orders table 
 	public void deleteOrder(Order order) {
 		// TODO Auto-generated method stub
 		openconnection();
@@ -144,5 +145,5 @@ public class DBconnector {
 			closeConnection();  
 		}
 	}
-
+	
 }
