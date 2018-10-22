@@ -93,7 +93,7 @@ public class DBconnector {
 	
 	
 	
-	//checks for any order which must have time-10 <= local time
+	//checks for any order which must have time-15 <= local time
 	public void getOrders() {
 		
 		
@@ -102,7 +102,7 @@ public class DBconnector {
 			 //create a statement
 			stmt = myConn.createStatement();
 			//execute querry
-			ResultSet rs = stmt.executeQuery("select * from orders where SUBTIME(time, '0:10:0') <= CURRENT_TIME()");
+			ResultSet rs = stmt.executeQuery("select * from orders where SUBTIME(time, '0:15:0') <= CURRENT_TIME()");
 			
 			while(rs.next()) {				
 				

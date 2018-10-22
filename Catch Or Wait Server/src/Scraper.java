@@ -1,9 +1,6 @@
-import java.io.IOException;
 import java.util.List;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -19,7 +16,7 @@ public class Scraper {
 		
 		
 		
-		driver.get("http://oasth.gr/#el/stopinfo/screen/1134/");
+		driver.get("http://oasth.gr/#el/stopinfo/screen/"+stop_id+"/");
 		
 
 		Thread.sleep(4000);
@@ -48,7 +45,7 @@ public class Scraper {
 
 		}
 
-			
+	   driver.close();
 	
 		 
 	}
