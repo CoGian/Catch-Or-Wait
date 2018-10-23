@@ -147,4 +147,26 @@ public class DBconnector {
 		}
 	}
 	
+	public String findStopNameByID(String stop_id) {
+		openconnection();
+		
+		try {
+			 //create a statement
+			stmt = myConn.createStatement();
+			//execute querry
+			ResultSet rs = stmt.executeQuery("select * from stops where id = '"+stop_id+"'");
+			while(rs.next())
+				return rs.getString("name") ; 
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			closeConnection();
+		}
+		
+		return null ; 
+		
+		
+	}
+	
 }
