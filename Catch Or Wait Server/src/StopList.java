@@ -4,20 +4,22 @@ public class StopList {
 	
 	static ArrayList<Stop> stops = new ArrayList<Stop>();
 	
-	//override conntains for stoplist
-	static boolean containsStop(Object o) {
+	//if stoplist conntains this stop return the stop else null
+	public static Stop containsStop(String stop_id) {
 		
-		boolean flag = false ;
+		
 		
 		if(!stops.isEmpty()) {
 			for(Stop s : stops) {
-				if(s.getId().equals(o))
-					flag = true ; 
+				if(s.getId().equals(stop_id))
+					return s ; 
 			}
 		}
 		
 			
-		return flag ; 
+		return null ; 
 	}
+	
+	
 
 }

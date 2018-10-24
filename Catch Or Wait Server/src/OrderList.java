@@ -19,11 +19,12 @@ public class OrderList extends TimerTask {
 		
 		for(Order o : orders) {
 			//checks if scraping has be done for stop by another order in the same time period
-			if(!StopList.containsStop(o.getStop_id())) {
+			Stop s = StopList.containsStop(o.getStop_id()) ; 
+			if(s == null ) {
 				
 				try {
 					//getting data from oasth website
-					scraper.scrapOASTH(o.getStop_id());
+					s = scraper.scrapOASTH(o.getStop_id());
 					
 				} catch (InterruptedException e) {
 					// TODO Auto-generated catch block
@@ -31,6 +32,8 @@ public class OrderList extends TimerTask {
 				}
 			}
 			
+			String msg ; 
+			System.out.println(o.checkTimeLimit()) ; 
 			
 				
 			

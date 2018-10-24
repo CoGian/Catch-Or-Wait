@@ -47,7 +47,19 @@ public class Stop {
 		this.arrival_times = arrivals_times;
 	} 
 	
-	
+	//finds bus arrival time and formats the msg 
+	public String findBusArrival(String bus_id) {
+		String msg = "" ; 
+		for(String b:arriving_buses) {
+			if (b.equals(bus_id)) {
+				int index = arriving_buses.indexOf(b) ; 
+				msg =  b + arrival_times.get(index) ; 
+				return msg ; 
+			}
+		}
+		
+		return msg ; 
+	}
 	
 
 }

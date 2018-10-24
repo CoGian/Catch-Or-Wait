@@ -1,5 +1,6 @@
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.TimeZone;
 
 public class DBconnector {
 	
@@ -16,7 +17,8 @@ public class DBconnector {
 	    //Open a connection
 	    System.out.println("Connecting to a selected database... ");
 	    //get a connection to database
-	    myConn=DriverManager.getConnection("jdbc:mysql://localhost:3306/catch_the_bus?useSSL=true&useUnicode=true&characterEncoding=utf8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC","root","");
+	    myConn=DriverManager.getConnection("jdbc:mysql://localhost:3306/catch_the_bus?useSSL=true&useUnicode="
+	    		+ "true&characterEncoding=utf8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone="+TimeZone.getDefault().getID()+"","root","");
 	   
 	   
 	  }

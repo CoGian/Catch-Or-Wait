@@ -10,7 +10,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class Scraper {
 
 
-	public void scrapOASTH(String stop_id) throws InterruptedException  {
+	public Stop scrapOASTH(String stop_id) throws InterruptedException  {
 		
 		WebDriver driver = new ChromeDriver();
 		System.out.println("Open Oasth Website");
@@ -44,14 +44,14 @@ public class Scraper {
 		}
 		
 		//save arrivals on stop list 
-		if(!arrivals.isEmpty()) {
-			DBconnector connector = new DBconnector(); 
-			Stop s = new Stop(stop_id,connector.findStopNameByID(stop_id), arriving_buses, arrival_times) ; 
-			StopList.stops.add(s) ; 
-		}
 		
-
-	   driver.close();
+		DBconnector connector = new DBconnector(); 
+		Stop s = new Stop(stop_id,connector.findStopNameByID(stop_id), arriving_buses, arrival_times) ; 
+		StopList.stops.add(s) ; 
+		
+		driver.close();
+		return s ; 
+		  
 	
 		 
 	}
