@@ -64,7 +64,7 @@ public class Order {
 		connector.deleteOrder(this);
 	}
 
-	//checks if this order has only 5 min or less
+	//checks if an order's time  has  more than 5 min  difference from curent time   .   
 	public boolean checkTimeLimit() {
 
 			Time t =  time ; 

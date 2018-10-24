@@ -33,14 +33,25 @@ public class OrderList extends TimerTask {
 			}
 			
 			String msg ; 
-			System.out.println(o.checkTimeLimit()) ; 
-			
+			//checks if order has time left to be executed 
+			if(o.checkTimeLimit()) {
+				
+				//finds bus arrival time in stop's info 
+				msg = s.findBusArrival(o.getBus_id());
+				//if msg != "" sends the message to the phone number 
+				if(!msg.equals("")) {
+					
+				}
+					
+			}
+			else msg ="Sorry currently no "+o.getBus_id()+"s are coming in this stop: " + o.getStop_id() ; 
 				
 			
 			
 			
 		}
 	    
+		//removes all stops  cause they will have different infos in 1.5 min 
 		StopList.stops.removeAll(StopList.stops)  ; 
 	}
 }
