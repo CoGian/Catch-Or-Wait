@@ -53,7 +53,7 @@ public class Stop {
 		for(String b:arriving_buses) {
 			if (b.equals(bus_id)) {
 				int index = arriving_buses.indexOf(b) ; 
-				msg =  b + arrival_times.get(index) ; 
+				msg ="To " + b +" "+ arrival_times.get(index) + "στην στάση " + this.name ; 
 				return msg ; 
 			}
 		}

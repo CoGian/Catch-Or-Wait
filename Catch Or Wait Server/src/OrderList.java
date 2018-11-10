@@ -40,7 +40,7 @@ public class OrderList extends TimerTask {
 				msg = s.findBusArrival(o.getBus_id());
 				//if msg != "" sends the message to the phone number 
 				if(!msg.equals("")) {
-					
+					System.out.println(msg);
 				}
 					
 			}
